@@ -1,0 +1,28 @@
+
+<h4><a href="{{ url_for('index', name = item) }}">Home</a></h4>
+
+<table>
+    {% for key in ["Name", "Dependencies", "Alternatives", "Description", "Need me"] %}
+        {% set value = data[key] %}
+        <tr>
+            <th> {{ key }} </th>
+                {% if (key == "Dependencies") or (key == "Need me") %}
+                    <td>
+                    {% for item in value %}
+                        <a href="{{ url_for('info', name = item) }}">{{ item }}</a>
+                    {% endfor %}
+                    </td>
+                {% elif key == "Alternatives" %}
+                    <td>
+                    {% for item in value %}
+                        {{ item }}
+                    {% endfor %}
+                    </td>
+                {% else %}
+                    {% autoescape false %}
+                        <td> {{ value }} </td>
+                    {% endautoescape %}
+                {% endif %}                
+        </tr>
+    {% endfor %}
+</table>

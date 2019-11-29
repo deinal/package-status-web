@@ -1,0 +1,6 @@
+
+<h4>Package list</h4>
+
+{% for item in data %}
+    <p><a href="{{ url_for('info', name = item) }}">{{ item }}</a></p>
+{% endfor %}
