@@ -1,0 +1,38 @@
+Package: libquadmath0
+Status: install ok installed
+Priority: optional
+Section: libs
+Installed-Size: 265
+Maintainer: Ubuntu Core developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: gcc-5
+Version: 5.4.0-6ubuntu1~16.04.12
+Depends: gcc-5-base (= 5.4.0-6ubuntu1~16.04.12), libc6 (>= 2.23)
+Description: GCC Quad-Precision Math Library
+ A library, which provides quad-precision mathematical functions on targets
+ supporting the __float128 datatype. The library is used to provide on such
+ targets the REAL(16) type in the GNU Fortran compiler.
+Homepage: http://gcc.gnu.org/
+Original-Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
+
+Package: libssl1.0.0
+Status: install ok installed
+Multi-Arch: same
+Priority: important
+Section: libs
+Installed-Size: 2836
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Source: openssl
+Version: 1.0.1-4ubuntu5.5
+Depends: libc6 (>= 2.14), zlib1g (>= 1:1.1.4), debconf (>= 0.5) | libquadmath0
+Pre-Depends: multiarch-support
+Breaks: openssh-client (<< 1:5.9p1-4), openssh-server (<< 1:5.9p1-4)
+Description: SSL shared libraries
+ libssl and libcrypto shared libraries needed by programs like
+ apache-ssl, telnet-ssl and openssh.
+ .
+ It is part of the OpenSSL implementation of SSL.
+Original-Maintainer: Debian OpenSSL Team <pkg-openssl-devel@lists.alioth.debian.org>
+
