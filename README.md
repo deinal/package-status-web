@@ -7,6 +7,23 @@
 
 Expose key information about packages in /var/lib/dpkg/status via an HTML interface
 
+Live at: https://pkg-status.herokuapp.com/
+
+## Run locally
+
+Python version: 3.7.3, should not be too strict though as long as it is python 3.x.
+
+    git clone https://github.com/hd4niel/package-status-web.git
+    cd package-status-web/
+    pip install -r requirements.txt
+    python main.py
+
+Runs on http://0.0.0.0:5000/
+
+By default status.real is read as package info file, but it is possible to give your own files as command line arguments:
+
+    python main.py /var/lib/dpkg/status    
+
 ## Docker
 
 Pull the image:
