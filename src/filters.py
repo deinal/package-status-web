@@ -49,7 +49,9 @@ def add_description(package, lines, line, i):
     while True:
         i += 1
         # Description ends when Homepage or Original-Maintainer begins
-        if "Homepage:" not in lines[i] and "Original-Maintainer:" not in lines[i]:
+        if "Homepage:" not in lines[i] and \
+            "Original-Maintainer:" not in lines[i] and \
+            lines[i] != "\n":
             package["Description"] += lines[i].replace("\n", "<br/>")
         else:
             break

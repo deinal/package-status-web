@@ -2,6 +2,7 @@
 from flask import Flask, render_template
 from src.content import get_content
 import sys
+import os
 
 app = Flask(__name__)
 
@@ -17,6 +18,11 @@ def generate(filename):
 
 @app.route("/")
 def index():
+    if len(sys.argv) == 2:
+        filename = sys.argv[1]
+    else:
+        filename = "status.real"
+    generate(filename)
     return render_template("index.html", data=names)
 
 
@@ -26,11 +32,5 @@ def info(name):
 
 
 if __name__ == "__main__":
-    print(sys.argv)
-    if len(sys.argv) == 2:
-        filename = sys.argv[1]
-    else:
-        filename = "status.real"
-    print(filename)
-    generate(filename)
+    port = int(os.environ.get('PORT', 5000))
     app.run(host="0.0.0.0", port=5000)
