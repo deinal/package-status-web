@@ -9,6 +9,16 @@ Expose key information about packages in /var/lib/dpkg/status via an HTML interf
 
 Live at: https://pkg-status.herokuapp.com/
 
+---
+
+* Name: Package name
+* Dependencies: Names of the packages the current package depends on
+* Alterantives: Alterantive dependencies without an entry in the status file
+* Description: Package description
+* Need me: Names of the packages that depend on the current package
+
+---
+
 ## Run locally
 
 Python version: 3.7.3, should not be too strict though as long as it is python 3.x.
