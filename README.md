@@ -13,7 +13,7 @@ Live at: https://pkg-status.herokuapp.com/
 
 * Name: Package name
 * Dependencies: Names of the packages the current package depends on
-* Alterantives: Alterantive dependencies without an entry in the status file
+* Alternatives: Alternative dependencies without an entry in the status file
 * Description: Package description
 * Need me: Names of the packages that depend on the current package
 
